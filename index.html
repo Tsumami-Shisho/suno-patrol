@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="自分だけのSunoアーティスト巡回ランチャー">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <link rel="stylesheet" href="style.css">
+  <title>Suno Patrol</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="メインナビゲーション">
+      <a class="brand" href="#/home" aria-label="Suno Patrol ホーム">
+        <span class="brand-mark" aria-hidden="true"><svg><use href="#icon-radio"></use></svg></span>
+        <span>Suno Patrol</span>
+      </a>
+      <nav class="side-nav">
+        <a href="#/home" data-route-link="home"><svg><use href="#icon-home"></use></svg><span>Home</span></a>
+        <a href="#/artists" data-route-link="artists"><svg><use href="#icon-users"></use></svg><span>Artists</span></a>
+        <a href="#/favorites" data-route-link="favorites"><svg><use href="#icon-star"></use></svg><span>Favorites</span></a>
+        <a href="#/settings" data-route-link="settings"><svg><use href="#icon-settings"></use></svg><span>Settings</span></a>
+      </nav>
+      <div class="sidebar-footer"><span class="status-dot"></span>この端末に保存中</div>
+    </aside>
+
+    <main id="app" class="main-content" tabindex="-1"></main>
+
+    <nav class="bottom-nav" aria-label="メインナビゲーション">
+      <a href="#/home" data-route-link="home"><svg><use href="#icon-home"></use></svg><span>Home</span></a>
+      <a href="#/artists" data-route-link="artists"><svg><use href="#icon-users"></use></svg><span>Artists</span></a>
+      <a href="#/favorites" data-route-link="favorites"><svg><use href="#icon-star"></use></svg><span>Favorites</span></a>
+      <a href="#/settings" data-route-link="settings"><svg><use href="#icon-settings"></use></svg><span>Settings</span></a>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="artist-dialog" class="form-dialog" aria-labelledby="artist-dialog-title"></dialog>
+  <dialog id="song-dialog" class="form-dialog" aria-labelledby="song-dialog-title"></dialog>
+  <dialog id="import-dialog" class="form-dialog" aria-labelledby="import-dialog-title"></dialog>
+
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="icon-radio" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5v-9Z"/><path d="m7 5 2-3M8 10h.01M11 10h.01M14 10h.01M17 10h.01M7 14h10M7 17h6"/></symbol>
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10Z"/><path d="M9 21v-7h6v7"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><path d="m12 3 2.78 5.63 6.22.9-4.5 4.39 1.06 6.2L12 17.2l-5.56 2.92 1.06-6.2L3 9.53l6.22-.9L12 3Z"/></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="m19.4 15 .1.1a2 2 0 1 1-2.8 2.8l-.1-.1a2 2 0 0 0-3.4 1.4v.3a2 2 0 1 1-4 0v-.2A2 2 0 0 0 5.8 18l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A2 2 0 0 0 1.6 12a2 2 0 1 1 0-4h.2A2 2 0 0 0 3.1 4.6L3 4.5a2 2 0 1 1 2.8-2.8l.1.1A2 2 0 0 0 9.3.4h.2a2 2 0 1 1 4 0v.2A2 2 0 0 0 17 1.8l.1-.1A2 2 0 1 1 20 4.5l-.1.1A2 2 0 0 0 21.3 8h.2a2 2 0 1 1 0 4h-.2a2 2 0 0 0-1.9 3Z"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="icon-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6M9 12h11"/></symbol>
+    <symbol id="icon-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M14 3h7v7M21 3l-9 9"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+    <symbol id="icon-edit" viewBox="0 0 24 24"><path d="m4 16-.8 4.8L8 20l11.5-11.5a2.1 2.1 0 0 0-3-3L5 17ZM14.5 7.5l2 2"/></symbol>
+    <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 14h10l1-14M9 7V4h6v3"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+    <symbol id="icon-upload" viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5M4 21h16"/></symbol>
+    <symbol id="icon-tag" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3.4 13.4a2 2 0 0 1-.6-1.4V5a2 2 0 0 1 2-2h7a2 2 0 0 1 1.4.6l7.4 7a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1"/></symbol>
+    <symbol id="icon-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13M9 18a3 3 0 1 1-3-3 3 3 0 0 1 3 3ZM20 16a3 3 0 1 1-3-3 3 3 0 0 1 3 3ZM9 9l11-2"/></symbol>
+  </svg>
+  <script src="app.js"></script>
+</body>
+</html>
