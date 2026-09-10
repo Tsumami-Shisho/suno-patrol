@@ -50,4 +50,4 @@ python -m http.server 8000
 
 ## 公開URL
 
-GitHub Repository / PagesのURLは、リポジトリを作成して公開したあとにこの欄へ記載してください。
+https://tsumami-shisho.github.io/suno-patrol/
