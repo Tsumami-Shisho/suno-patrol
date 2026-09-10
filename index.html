@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#101114">
   <meta name="description" content="自分だけのSunoアーティスト巡回ランチャー">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Suno Patrol">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/icon.svg">
@@ -39,7 +42,6 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="artist-dialog" class="form-dialog" aria-labelledby="artist-dialog-title"></dialog>
-  <dialog id="song-dialog" class="form-dialog" aria-labelledby="song-dialog-title"></dialog>
   <dialog id="import-dialog" class="form-dialog" aria-labelledby="import-dialog-title"></dialog>
 
   <svg class="svg-sprite" aria-hidden="true">
@@ -62,6 +64,6 @@
     <symbol id="icon-tag" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3.4 13.4a2 2 0 0 1-.6-1.4V5a2 2 0 0 1 2-2h7a2 2 0 0 1 1.4.6l7.4 7a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1"/></symbol>
     <symbol id="icon-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13M9 18a3 3 0 1 1-3-3 3 3 0 0 1 3 3ZM20 16a3 3 0 1 1-3-3 3 3 0 0 1 3 3ZM9 9l11-2"/></symbol>
   </svg>
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>
